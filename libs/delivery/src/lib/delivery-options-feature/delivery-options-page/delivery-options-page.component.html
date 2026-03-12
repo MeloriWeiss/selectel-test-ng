@@ -1,0 +1,20 @@
+<form class="delivery-options-form" [formGroup]="optionsForm">
+  @for (option of optionsForm.controls | keyvalue : sort; track option; let i = $index) {
+    <div class="delivery-option">
+      <label class="delivery-option__label">
+        <input
+          type="checkbox"
+          class="delivery-option__checkbox"
+          [formControlName]="option.key"
+        >
+        <span>{{ options[i].name }}</span>
+      </label>
+
+      <div class="delivery-option__params">
+        @for (info of options[i].info; track info.value) {
+          <span>{{ info.name }} {{ info.value }}</span>
+        }
+      </div>
+    </div>
+  }
+</form>

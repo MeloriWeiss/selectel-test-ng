@@ -1,0 +1,20 @@
+:root {
+  --light-color: #FFF;
+  --dark-color: #000000FF;
+  --gray-color: rgba(79, 79, 79, 0.75);
+  --active-color: #a80000;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:active,
+  &:visited,
+  &:focus {
+    color: inherit;
+  }
+}

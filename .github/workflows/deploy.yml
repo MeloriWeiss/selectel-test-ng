@@ -1,0 +1,40 @@
+name: Deploy
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+          cache: 'yarn'
+
+      - name: Install
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn nx build selectel-test --prod --baseHref=/${{ github.event.repository.name }}/
+
+      - name: Fix Angular 404
+        run: cp dist/apps/selectel-test/browser/index.html dist/apps/selectel-test/browser/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/apps/selectel-test/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/deploy-pages@v4

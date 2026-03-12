@@ -1,0 +1,10 @@
+<header class="delivery-header">
+  <span>Раздел: {{ currentPath() }}</span>
+
+  @if (lastRoute() === '/delivery/options') {
+    <div class="delivery-header__right-side">
+      <span>Выбрано пунктов: {{ selectedOptions().length }}</span>
+      <span>Общее значение: {{ totalSum() }}</span>
+    </div>
+  }
+</header>

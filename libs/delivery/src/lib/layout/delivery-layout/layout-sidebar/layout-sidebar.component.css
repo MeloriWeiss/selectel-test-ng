@@ -1,0 +1,25 @@
+.delivery-sidebar {
+  padding: 20px 40px;
+  height: 100%;
+  border-right: 1px solid var(--dark-color);
+}
+
+.delivery-sidebar__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.delivery-sidebar__navigation-item {
+  transition: transform .3s;
+
+  &:hover {
+    transform: translateX(10px);
+  }
+
+  .active {
+    color: var(--active-color);
+  }
+}

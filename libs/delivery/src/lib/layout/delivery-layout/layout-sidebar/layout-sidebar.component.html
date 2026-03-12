@@ -1,0 +1,14 @@
+<aside class="delivery-sidebar">
+  <nav>
+    <ul class="delivery-sidebar__navigation">
+      @for (navItem of deliveryNav; track navItem.url) {
+        <li class="delivery-sidebar__navigation-item">
+          <a
+            [routerLink]="[navItem.url]"
+            routerLinkActive="active"
+          >{{ navItem.name }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</aside>

@@ -1,0 +1,14 @@
+.delivery-header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-color);
+}
+
+.delivery-header__right-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}

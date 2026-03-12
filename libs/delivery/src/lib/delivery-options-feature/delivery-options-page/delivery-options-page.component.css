@@ -1,0 +1,31 @@
+.delivery-options-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+}
+
+.delivery-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.delivery-option__label {
+  display: flex;
+  gap: 5px;
+  width: min-content;
+  cursor: pointer;
+  user-select: none;
+}
+
+.delivery-option__checkbox {
+  cursor: pointer;
+}
+
+.delivery-option__params {
+  color: var(--gray-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
